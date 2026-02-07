@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather Planner</title>
+</head>
+<body>
+    <header>
+    <h1>My Weather Planner</h1>
+    <p>Add any city and find the weather information.</p>
+  </header>
+
+   <form id="weatherForm">
+  <label>
+    City Name:
+    <input type="text" id="title" required>
+  </label>
+<br>
+  <label for="units">
+    Units:
+    <select name="units" id="units">
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+    </select>
+    </label>
+<br>
+  <label>
+    Inlcude Wind Speed:
+    <input type="checkbox" id="windspeed">
+  </label>
+ 
+  <button type="submit">Get Weather Information</button>
+</form>
+</body>
+</html>
