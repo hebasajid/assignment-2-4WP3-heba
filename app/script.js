@@ -5,5 +5,16 @@ app.post("/get-weather", async function(req, res) {
     const unitType = req.body.units;
     const showWind = req.body.wind;
 
-    
+    // calling the weather api
+    //  axios.get with multiple params just like the class demo
+    try {
+        const response = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
+            params: {
+                q: city,
+                units: unitType,
+                appid: "" 
+            }
+        });
+
+      
 });
