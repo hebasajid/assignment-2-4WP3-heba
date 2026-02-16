@@ -16,5 +16,13 @@ app.post("/get-weather", async function(req, res) {
             }
         });
 
-      
+        // returning subset of JSON:
+        res.json({
+            temp: response.data.main.temp,
+            city: response.data.name,
+            wind: showWind ? response.data.wind.speed : null
+        });
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch data" });
+    }
 });
