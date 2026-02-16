@@ -20,9 +20,9 @@ app.post("/get-weather", async function(req, res) {
     const unitType = req.body.units;
     const showWind = req.body.wind;
  
-    let apiUnits = "metric";
+    let apiUnits = "metric";  //using metric nd imperial insted of fahrenheit and celsius due to 3rd party api requirements.
 
-    if (unitType === "fahrenheit") {
+    if (unitType === "fahrenheit") { 
         apiUnits = "imperial";
     }
 
