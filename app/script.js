@@ -22,7 +22,7 @@ document.getElementById('weatherForm').addEventListener('submit', async (e) => {
     displayWeather(data, unitValue);
 
     
-});
+}); 
 
 function displayWeather(data, unitType) {
     const resultsDiv = document.getElementById('results');
@@ -35,4 +35,4 @@ function displayWeather(data, unitType) {
             ${data.wind !== null ? `<p><strong>Wind Speed:</strong> ${data.wind} m/s</p>` : ''}
         </div>
     `;
-}
+} //bug identified
