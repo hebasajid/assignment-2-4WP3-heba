@@ -19,9 +19,13 @@ document.getElementById('weatherForm').addEventListener('submit', async (e) => {
 
     const data = await response.json();
 
+   if (!response.ok) {
+  
+    displayError(data.error);
+    } else {
     displayWeather(data, unitValue);
+    }
 
-    
 }); 
 
 function displayWeather(data, unitType) {
@@ -36,3 +40,8 @@ function displayWeather(data, unitType) {
         </div>
     `;
 } 
+
+function displayError(message) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `<p style="padding: 10px;">Error: ${message}</p>`;
+}
