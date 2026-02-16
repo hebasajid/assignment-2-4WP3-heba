@@ -12,7 +12,7 @@ app.post("/get-weather", async function(req, res) {
             params: {
                 q: city,
                 units: unitType,
-                appid: "" 
+                appid: "1791d9ceac96c2391e4f7e84cf08e6de" 
             }
         });
 
