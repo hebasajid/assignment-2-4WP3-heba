@@ -35,4 +35,4 @@ function displayWeather(data, unitType) {
             ${data.wind !== null ? `<p><strong>Wind Speed:</strong> ${data.wind} m/s</p>` : ''}
         </div>
     `;
-} //bug identified
+} 
