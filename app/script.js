@@ -1,7 +1,7 @@
 document.getElementById('weatherForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const cityValue = document.getElementById('title').value;
+    const cityValue = document.getElementById('city').value;
     const unitValue = document.getElementById('units').value;
     const windValue = document.getElementById('windspeed').checked;
 
@@ -30,7 +30,7 @@ function displayWeather(data, unitType) {
 
     resultsDiv.innerHTML = `
         <div style="border: 1px solid #333; padding: 10px; border-radius: 8px;">
-            <h2>Weather for ${data.city}</h2>
+            <h2>Weather for ${data.name}</h2>
             <p><strong>Temperature:</strong> ${data.temp}${symbol}</p>
             ${data.wind !== null ? `<p><strong>Wind Speed:</strong> ${data.wind} m/s</p>` : ''}
         </div>
