@@ -18,3 +18,6 @@ document.getElementById('weatherForm').addEventListener('submit', async (e) => {
     });
 
     const data = await response.json();
+
+    displayWeather(data, unitValue);
+});
