@@ -1,0 +1,25 @@
+One of the main issues I encountered during development 
+was a 500 Internal Server Error when attempting to fetch
+weather data from the OpenWeatherMap API (Hash Number: 94a3960120fc950fb95a71109253b2ee12bcbeb6).
+This was causing the results to show "Undefined". The 
+frontend AJAX request seemed right but the server was crashing during the API call. After debugging, I discovered 
+that I was using a variable (apiUnits) in the axios request before 
+defining it. Because JavaScript throws a ReferenceError when an undefined 
+variable is accessed, this caused the Express route to fail and return a 500 error.
+This helped me learn that external API keys can take time to activate, and server-side errors can sometimes 
+originate from third-party API responses rather than frontend code.
+The issue was resolved by properly defining the apiUnits variable
+before using it in the axios request and confirming that the API
+key had activated.
+Another issue I encountered that I was able to resolve was, doing some error handling.
+I wanted the app to show the user that if they entered an input in the city input with numbers; the form would show
+an error, and if they entered a city that doesn't exist; it would not fetch any data 
+(Hash Number: e6dda241775308548d1741e2ae9557c130d94f8d), because before 
+any error handling it would show the results as 'Undefined'. I had some trouble implementing
+this but to resolve this, I implemented a custom displayError function in my script.js and
+added logic to check the response.ok status of my AJAX fetch request. I learned how to pass 
+specific error messages from my Node.js backend to the front-end in JSON format so that I could 
+inform the user of the issue rather than "dumping" a generic error message.
+
+
+Link to Github Repository: https://github.com/hebasajid/assignment-2-4WP3-heba 
